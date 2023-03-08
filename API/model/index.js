@@ -11,7 +11,7 @@ class User{
         const {emailAdd, userPass} = req.body;
         const strQry =
         `
-        SELECT userID, firstName, lastName, gender, cellphoneNumber, emailAdd, userPass, userRole, userProfile, joinDate
+        SELECT userID, firstName, lastName, cellphoneNumber, emailAdd, userPass, userRole, userProfile
         FROM Users
         WHERE emailAdd = ${emailAdd};
         `;
@@ -47,10 +47,10 @@ class User{
             }
         })
     }
-    fetchUser(req, res){
+    fetchUsers(req, res){
         const strQry =
         `
-        SELECT userID, firstName, lastName, gender, cellphoneNumber, emailAdd, userPass, userRole, userProfile, joinDate
+        SELECT userID, firstName, lastName, cellphoneNumber, emailAdd, userPass, userRole, userProfile
         FROM Users;
         `
         db.query(strQry, (err, data)=>{
@@ -61,7 +61,7 @@ class User{
     fetchUser(req, res){
         const strQry =
         `
-        SELECT userID, firstName, lastName, gender, cellphoneNumber, emailAdd, userRole, userProfile, joinDate
+        SELECT userID, firstName, lastName, cellphoneNumber, emailAdd, userRole, userProfile
         FROM Users
         WHERE UserID = ?;
         `
@@ -124,6 +124,11 @@ class User{
             })
     }
 }
+
+// exports.create = async function(data){
+//     const salt = await bcrypt.genSalt(10);
+//     data.userPass = await bcrypt.hash(data.userPass, salt);
+// }
 
 // ====== Products ======
 class Product {

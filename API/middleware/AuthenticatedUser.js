@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { sign, verify } = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 
 function createToken(user) {
     return sign({
@@ -31,4 +32,7 @@ function verifyAToken(req, res, next) {
 }catch(e){
     request.status(400).json({err: e.message});
 }}
+
+
+
 module.exports = {createToken, verifyAToken};
