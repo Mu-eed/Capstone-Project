@@ -14,7 +14,7 @@ const user = new User();
 
 const product = new Product();
 
-route.get("^/$|/capstone", (req, res)=>{
+route.get("/", (req, res)=>{
     res.status(200).sendFile(path.join(__dirname, '../view/index.html'));
 })
 
