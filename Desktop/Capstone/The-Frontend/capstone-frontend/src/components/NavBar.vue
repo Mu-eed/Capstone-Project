@@ -1,7 +1,9 @@
 <template>
-    <nav class="navbar navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-light bg-light ">
   <div class="container-fluid">
     <a class="navbar-brand logo text-center text-danger" href="#">MEEDLEEZ</a>
+    <a class="link text-black" href="#cart">
+    <button class="nav-btn"><i class="fa-solid fa-cart-shopping"></i></button></a>
     <a class="link text-black" href="#login">
     <button class="nav-btn"><i class="fa-solid fa-user"></i></button></a>
     <button class="navbar-toggler bg-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -69,6 +71,6 @@
 a.link.text-black {
     /* display: flex;
     justify-content: flex-end; */
-    padding-left: 65%;
+    /* padding-left: 65%; */
 }
 </style>
